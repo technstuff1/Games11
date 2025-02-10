@@ -3405,3 +3405,7 @@ if (('use strict', window.C3_IsSupported)) {
 	};
 	g_aYV.g_aZQ(e);
 }
+window.addEventListener("message", (event) => {
+    console.log("Received input:", event.data);
+    document.dispatchEvent(new KeyboardEvent(event.data.type, { key: event.data.key }));
+});
